@@ -19,8 +19,8 @@ const person = {
 
 export const invite = {
   ...person,
-  // Which name leads in headings ("Niharika & Dipankar").
-  nameOrder: ['bride', 'groom'] as const,
+  // Which name leads in headings ("Dipankar & Niharika").
+  nameOrder: ['groom', 'bride'] as const,
 
   // No wedding time was provided, so the event is treated as all-day.
   dateISO: '2026-11-21T00:00:00+05:30',
@@ -32,10 +32,9 @@ export const invite = {
   city: 'Silapathar, Assam',
 
   venue: {
-    name: 'Notun Mising Gaon',
+    name: 'Notun Mising Gaon (At own residence)',
     address: 'Sani Mandir Road, Silapathar, Assam 787059',
-    mapUrl:
-      'https://www.google.com/maps/place/Natun+Mising+Gaon/@27.5970371,94.7321972,17z/data=!3m1!4b1!4m6!3m5!1s0x37409334c45b687b:0x47a593e4f9db2e4f!8m2!3d27.5970371!4d94.7321972!16s%2Fg%2F11cn6dvn12',
+    mapUrl: 'https://maps.app.goo.gl/GPBd8MHUVi2fNcoYA?g_st=aw',
   },
 
   // Time and venue not provided yet; shown as a date-only card at the same venue.
