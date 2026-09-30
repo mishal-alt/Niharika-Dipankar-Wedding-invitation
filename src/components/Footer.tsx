@@ -2,6 +2,18 @@ import { Heart } from 'lucide-react'
 import { invite, leadNames } from '../data/invite'
 import { Aurora, CornerMotif, MandalaBg, WeaveBorder, Reveal, SectionLabel } from './ui'
 
+const credit = { name: 'zetron.tech', url: 'https://www.instagram.com/zetron.tech' }
+
+function InstagramIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" />
+    </svg>
+  )
+}
+
 export function Footer() {
   const { first, second } = leadNames
   return (
@@ -44,6 +56,17 @@ export function Footer() {
         <p className="mt-12 flex items-center justify-center gap-1.5 text-[0.6rem] tracking-[0.3em] text-ivory/35 uppercase">
           Made with <Heart className="h-3 w-3 fill-current text-gold" /> for our people
         </p>
+
+        <a
+          href={credit.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Crafted by ${credit.name} on Instagram`}
+          className="mx-auto mt-6 flex w-fit items-center gap-2 border-t border-gold/15 pt-4 text-[0.6rem] tracking-[0.3em] text-ivory/40 uppercase transition-colors hover:text-gold"
+        >
+          <InstagramIcon className="h-3.5 w-3.5" />
+          <span>Crafted by {credit.name}</span>
+        </a>
       </div>
     </footer>
   )
