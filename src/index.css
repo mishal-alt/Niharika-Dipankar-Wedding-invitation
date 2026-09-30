@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --radius: 0.75rem;
+  --ivory: oklch(97.2% 0.014 92);
+  --gold: oklch(78% 0.115 85);
+  --gold-soft: oklch(88% 0.07 88);
+  --emerald-deep: oklch(33% 0.072 158);
+  --emerald-ink: oklch(21.5% 0.05 160);
+  --rose-wine: oklch(42% 0.14 15);
+  --background: oklch(97.2% 0.014 92);
+  --foreground: oklch(26% 0.045 160);
+  --card: oklch(98.5% 0.009 92);
+  --primary: oklch(33% 0.072 158);
+  --secondary: oklch(93% 0.026 92);
+  --muted-foreground: oklch(50% 0.03 150);
+  --border: oklch(87% 0.035 90);
+  --gradient-gold: linear-gradient(100deg, oklch(72% 0.1 78), oklch(92% 0.09 92), oklch(74% 0.115 82));
+  --shadow-luxe: 0 24px 60px -28px oklch(33% 0.072 158 / 0.45);
+  --shadow-gold: 0 10px 30px -12px oklch(78% 0.115 85 / 0.55);
+}
+
+@theme inline {
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-bn: "Noto Serif Bengali", "Noto Sans Bengali", serif;
+  --color-ivory: var(--ivory);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-emerald-ink: var(--emerald-ink);
+  --color-rose-wine: var(--rose-wine);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --shadow-luxe: var(--shadow-luxe);
+  --shadow-gold: var(--shadow-gold);
+  --animate-float-soft: float-soft 6s ease-in-out infinite;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+.text-gold-foil {
+  background-image: var(--gradient-gold);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.rule-gold {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 45%, var(--gold) 55%, transparent);
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate(-8%, -4%) scale(1.05);
+  }
+  50% {
+    transform: translate(8%, 6%) scale(1.25);
+  }
+  100% {
+    transform: translate(-8%, -4%) scale(1.05);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
